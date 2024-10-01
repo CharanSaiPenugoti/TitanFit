@@ -1,0 +1,56 @@
+<template>
+    <lightning-card>
+        <div class="MainHeader">
+            <img src={mainLogo} alt="Titan Fit Logo" class="MainLogo">
+            <input type="text" class="MainSearchBar" placeholder="Type a Product name e.g Biozyme"></input>
+            <lightning-icon icon-name="utility:cart" class="Cart"></lightning-icon>
+            <div>
+                <lightning-icon if:true ={isSigned} icon-name="utility:user" class="User"></lightning-icon>
+                <button if:false = {isSigned} class="LSButton">Login/Sign up</button>
+            </div>
+        </div>
+        <div class="NavBar">
+            <div class="Options">
+                <h1 class="Option Products">ALL PRODUCTS</h1>
+                <h1 class="Option Offer">OFFERS</h1>
+                <h1 class="Option AboutUs">OUR STORY</h1>
+                <h1 class="Option Support">CHAT SUPPORT</h1>
+                <h1 class="Option terms">SALES T&C</h1>
+            </div>
+        </div>
+        <div class="NewLauch">
+            <h3>New Launch Products are Available in this Banner With the Price Mentioned</h3>
+        </div>
+        <section class="container">
+            <div class="slider-wrapper">
+                <div class="slider" data-id="slider">
+                    <template for:each={images} for:item="image">
+                        <img key={image.id} src={image.src} class="MainSlideShow-Image">
+                    </template>
+                </div>
+                <div class="slider-nav">
+                    <template for:each={images} for:item="image">
+                        <a key={image.id} data-slide={image.index} onclick={handleNavClick}></a>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <div class="ProductDetailPage">
+            <h1>Product Details</h1>
+        </div>
+        <div class="Footer">
+            <div class="details">
+                <div class="Links">
+                    Links
+                </div>
+                <div class="ContactUs">
+                    Contact Us
+                </div>
+            </div>
+            <div class="FooterEnd">
+                Footer
+            </div>
+
+        </div>
+    </lightning-card>
+</template>
